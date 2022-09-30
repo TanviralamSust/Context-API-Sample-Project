@@ -1,0 +1,22 @@
+.navbar {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  .nav-items {
+    font-size: 26px;
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    margin: 10px 20px 10px 20px;
+  }
+  .nav-items-active {
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 10px 20px 10px 20px;
+  }
+
+}
