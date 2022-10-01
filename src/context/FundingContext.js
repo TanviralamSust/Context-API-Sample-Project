@@ -9,23 +9,23 @@ export function FundingProvider({children}) {
     const [error, setError] = useState(false);
 
     useEffect(()=>{
-        fetchFunding();
+        getFunding("");
     },[])
 
-    async function fetchFunding  ()  {
-        try{
-            const response = await axios.get("http://localhost:3009/api/v1/funds");
-            setFunding(response.data);
-            setLoading(false);
-            setError(false);
-        }catch (err) {
-            setLoading(false);
-            setError(true);
-        }
-    }
+    // async function fetchFunding  ()  {
+    //     try{
+    //         const response = await axios.get("http://localhost:3009/api/v1/funds");
+    //         setFunding(response.data);
+    //         setLoading(false);
+    //         setError(false);
+    //     }catch (err) {
+    //         setLoading(false);
+    //         setError(true);
+    //     }
+    // }
     async function getFunding  (term)  {
         try{
-            const response = await axios.get("http://localhost:3009/api/v1/funds", {params: {term: term}});
+            const response = await axios.get("http://localhost:3009/api/v1/funds", (term !== ""? {params: {term: term}}: {}));
             setFunding(response.data);
             setLoading(false);
             setError(false);
