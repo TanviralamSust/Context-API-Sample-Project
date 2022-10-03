@@ -17,7 +17,7 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <div>
-                <input value={term} type="text" onChange={(event)=> {
+                <input data-testid="search-input" value={term} type="text" onChange={(event)=> {
                     setTerm(event.target.value)
                 }} placeholder="Search with Fund Name and Tickers"/>
                 <button onClick={onSearch}>Search</button>

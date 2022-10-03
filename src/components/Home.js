@@ -57,8 +57,12 @@ export default function Home() {
     // };
 
 
-    return loading?<div>... Loading</div> : (
-        <div style={{ height: 'calc(90vh - 80px)'}}>
+    return loading?<div>
+        <h1>
+            loading
+        </h1>
+        </div> : (
+        <div data-testid="my-test" style={{ height: 'calc(90vh - 80px)'}}>
 
             {/*<AutoSizer>*/}
             {/*    {*/}
@@ -85,8 +89,9 @@ export default function Home() {
             {/*{*/}
             <DataGrid
                 rows={funding}
+                getRowId={(funding) => funding.id}
                 columns={columns}
-                rowsPerPageOptions={[5, 10, 15, 50, 100]}
+                rowsPerPageOptions={[5, 12, 15, 50, 100]}
                 checkboxSelection
                 pageSize={pageSize}
                 onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
